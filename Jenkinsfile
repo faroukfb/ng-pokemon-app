@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NODE_VERSION = '19.7.0'
+        NODE_VERSION = '16.18.1'
     }
     stages {
         stage('Checkout') {
