@@ -11,8 +11,10 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                nodejs(nodeJSInstallationName: 'NodeJS ${NODE_VERSION}', configId: 'nodejs-config')
-                sh 'npm install'
+                nodejs('nodejs'){
+                    sh 'npm install'
+                }
+                
                 
             }
         }
