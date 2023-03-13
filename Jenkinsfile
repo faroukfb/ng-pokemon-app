@@ -13,6 +13,11 @@ pipeline {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS ${NODE_VERSION}', configId: 'nodejs-config')
                 sh 'npm install'
+                
+            }
+        }
+        stage('fix') {
+            steps {
                 sh 'npm audit fix --force'
             }
         }
