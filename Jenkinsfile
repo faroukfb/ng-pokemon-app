@@ -9,10 +9,16 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/faroukfb/ng-pokemon-app.git']]])
             }
         }
-       stage('Build') {
+       stage('Install dependacy') {
             steps {
                 sh 'npm install'
                 sh 'npm audit fix --force'
+                
+            }
+        }
+         stage('build') {
+            steps {
+                
                 sh 'npm run build'
             }
         }
