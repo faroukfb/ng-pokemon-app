@@ -12,7 +12,7 @@ pipeline {
        stage('Install dependacy') {
             steps {
                 sh 'npm install'
-                sh 'npm audit fix --force'
+               
                 
             }
         }
