@@ -8,7 +8,7 @@ RUN npm install
 COPY . /app/
 RUN npm run build --prod
 
-EXPOSE 4200
+EXPOSE 80
 
 CMD ["npm", "start"]
 
