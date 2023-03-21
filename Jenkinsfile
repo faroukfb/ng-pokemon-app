@@ -12,7 +12,7 @@ pipeline {
        stage('Install dependacy') {
             steps {
                 sh 'npm install'
-               
+                
                 
             }
         }
@@ -20,6 +20,14 @@ pipeline {
             steps {
                 
                 sh 'npm run build'
+            }
+        }
+        
+         stage('Docker') {
+            steps {
+                
+                sh 'sudo docker build -t faroukbouhassine/ng-pokemon .'
+                sh 'sudo docker push faroukbouhassine/ng-pokemon '
             }
         }
        
