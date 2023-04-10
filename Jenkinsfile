@@ -20,7 +20,7 @@ pipeline {
             steps {
                 
                 sh 'npm run build'
-                sh 'ng serve'
+               // sh 'ng serve'
             }
         }
         
